@@ -31,9 +31,11 @@ y <- x[x > 0]
 z <- x[x < 0]
 v <- x[-1]
 w <- x[seq_along(x) %% 2 == 1]
+# primero entendí esto como los índices pares, en vez de el mismo número, como en el apartado iv
 w2 <- x[seq_along(x) %% 2 == 0]
+# realmente sería
+w2 <- x[x %% 2 == 0 & x > 0]
 
-# ────────────────────────────────────────────────────────────────────────────────
 # ej 6
 x <- c(3, log(-15), 5)
 is.nan(x)
