@@ -1,3 +1,6 @@
+*.txt
+
+# Template:
 # History files
 .Rhistory
 .Rapp.history
