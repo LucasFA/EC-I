@@ -82,9 +82,9 @@ outer(c(2, 3), c(5, 7))
 # ────────────────────────────────────────────────────────────────────────────────
 # Ej 11
 
-A <- matrix(1:36, nrow = 2, ncol = 3)
-B <- matrix(1:36, nrow = 3, ncol = 4)
-C <- matrix(1:36, nrow = 2, ncol = 3)
+A <- matrix(1:6, nrow = 2, ncol = 3)
+B <- matrix(1:6, nrow = 3, ncol = 4)
+C <- matrix(1:6, nrow = 2, ncol = 3)
 
 A * B # no tienen los mismos tamaños
 outer(A, B) # sin problema
