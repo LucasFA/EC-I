@@ -90,7 +90,7 @@ datos[datos$country == "United Kingdom", ]
 
 datos[which(datos$country == "United Kingdom"), ]
 
-datosmios <- datos[which(datos$country %in% c("Spain", "Mali", "Canada")), ]
+datosmios <- datos[datos$country %in% c("Spain", "Mali", "Canada"), ] # ie: en la fila, country es uno de c("Spain"...)
 
 write.csv(datosmios, file = "datosmios.txt")
 # write.csv(datosmios, file = "datosmios.txt", row.names = F)
