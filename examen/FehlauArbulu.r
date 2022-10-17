@@ -20,6 +20,7 @@ C1 <- list(grupo = grupo, grupo_verano = grupo_verano)
 
 # w
 length(C1)
+
 # x
 sapply(C1, nrow)
 
@@ -43,7 +44,7 @@ F <- F[-length(F)]
 # Ej 3
 
 bio <- read.csv("datos_biologia_A.txt", header = TRUE, sep = " ")
-alg <- read.csv("datos_algebra_A.txt", header = TRUE, sep = ",")
+alg <- read.csv("datos_algebra_A.txt", header = TRUE, sep = ",", fileEncoding = "UTF-8")
 
 id_comunes <- intersect(bio$id, alg$id)
 df1 <- bio[id_comunes %in% bio$id, c("nombre", "edad")]
