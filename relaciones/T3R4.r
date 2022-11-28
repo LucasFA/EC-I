@@ -54,7 +54,6 @@ juego <- function(arg) {
         list(
             a_media = mean()
         )
-        )
     } else {
 
     }
