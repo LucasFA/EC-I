@@ -28,8 +28,10 @@ boxplot(
     col = cols_box,
     main = "Distribución de la temperatura\nen función el mes",
 )
+
 legend(
     x = 90,
+    y = 1.75,
     legend = month.name[5:9],
     fill = cols_box
 )
@@ -40,11 +42,15 @@ f <- function(x) {
 }
 
 curve(f, 0, pi)
-
+curva2 <- curve(f, 2, 3, add = TRUE)
+polygon(c(curva2$x, rev(curva2$x)), c(curva2$y, 0 * rev(curva2$y)), col = "green")
 
 # Ejercicio 2
 # Apartado a
-posibles_meses <- as.integer(levels(factor(airquality$Month)))
+posibles_meses <- airquality$Month |>
+    factor() |>
+    levels() |>
+    as.integer()
 indices <- sample(x = posibles_meses, size = 2)
 
 temperatura <- airquality$Temp
@@ -54,7 +60,12 @@ reg <- lm(ozono ~ temperatura)
 
 
 muestras <- runif(2, 65, 78)
-# predict.lm(reg, newdata = muestras)
+predict(
+    reg,
+    newdata = data.frame(temperatura = muestras), 
+    interval = "confidence",
+    level = 0.98
+)
 
 reg$residuals
 
