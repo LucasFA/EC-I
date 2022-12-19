@@ -62,7 +62,7 @@ reg <- lm(ozono ~ temperatura)
 muestras <- runif(2, 65, 78)
 predict(
     reg,
-    newdata = data.frame(temperatura = muestras), 
+    newdata = data.frame(temperatura = muestras),
     interval = "confidence",
     level = 0.98
 )
@@ -71,9 +71,9 @@ reg$residuals
 
 # Apartado b
 ajuste <- function(modelo) {
-    # 
+    #
 
-    # 
+    #
 
-    # 
+    #
 }
